@@ -3,9 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/common/constants/assets.dart';
-import '../../../data/common/constants/routes.dart';
-import '../../../data/services/navigation/navigation.dart';
-import '../../../di/get_it.dart';
 import '../../bloc/input_bloc.dart';
 import '../../components/custom_text_field.dart';
 import '../../themes/colors.dart';
@@ -98,7 +95,6 @@ class _InputPageState extends State<InputPage> {
                     focusNode: startDateFocusNode,
                     nextNode: averagePeriodFocusNode,
                     hintText: 'Last Period',
-                    autovalidateMode: AutovalidateMode.disabled,
                     enabled: false,
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
@@ -113,14 +109,13 @@ class _InputPageState extends State<InputPage> {
                   controller: averagePeriodController,
                   focusNode: averagePeriodFocusNode,
                   nextNode: lengthOfCycleFocusNode,
-                  autovalidateMode: AutovalidateMode.disabled,
                   textInputType: TextInputType.number,
                   onChanged: (String value) {
                     if (value.isNotEmpty) {
                       context.read<InputCubit>().setAverageLengthOfPeriod(value: value);
                     }
                   },
-                  hintText: 'Length of Period',
+                  hintText: 'Length of Period e.g 5, 6, 7...',
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return 'Required field';
@@ -136,9 +131,8 @@ class _InputPageState extends State<InputPage> {
                   controller: lengthOfCycleController,
                   focusNode: lengthOfCycleFocusNode,
                   textInputAction: TextInputAction.done,
-                  autovalidateMode: AutovalidateMode.disabled,
                   textInputType: TextInputType.number,
-                  hintText: 'Length of Cycle',
+                  hintText: 'Length of Cycle e.g 29, 30, 31...',
                   onChanged: (String value) {
                     if (value.isNotEmpty) {
                       context.read<InputCubit>().setAverageLengthOfCycle(value: value);

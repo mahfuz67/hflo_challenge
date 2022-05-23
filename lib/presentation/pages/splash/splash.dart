@@ -5,7 +5,6 @@ import '../../../data/common/constants/routes.dart';
 import '../../../data/services/navigation/navigation.dart';
 import '../../../data/services/prefs/shared_prefs.dart';
 import '../../../di/get_it.dart';
-import '../../bloc/input_bloc.dart';
 import '../../themes/colors.dart';
 
 class Splash extends StatefulWidget {
@@ -20,6 +19,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     Future.delayed(const Duration(seconds: 5), () {
       if(getIt<SharedServiceImpl>().userInputExist()){
+        //getIt<NavigationServiceImpl>().replaceWith(Routes.inputRoute);
         getIt<NavigationServiceImpl>().replaceWith(Routes.baseRoute);
       }else {
         getIt<NavigationServiceImpl>().replaceWith(Routes.inputRoute);

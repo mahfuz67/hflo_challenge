@@ -20,10 +20,10 @@ class DialogServicesImpl implements DialogServices {
           child: Container(
               padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 15),
               width: MediaQuery.of(context).size.width * 0.9,
-              height: 420,
+              height: 440,
               decoration:
               BoxDecoration(borderRadius: BorderRadius.circular(15)),
-              child: const DialogWidget()),
+              child: const Center(child: DialogWidget())),
         ));
   }
 }

@@ -1,4 +1,3 @@
-
 import 'package:table_calendar/table_calendar.dart';
 
 extension Range on DateTime {

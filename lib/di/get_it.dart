@@ -9,6 +9,7 @@ import '../data/services/events/events.dart';
 import '../data/services/navigation/navigation.dart';
 import '../data/services/prefs/shared_prefs.dart';
 import '../data/services/snackbar/snackbar.dart';
+import '../presentation/bloc/adding_events.dart';
 import '../presentation/bloc/input_bloc.dart';
 
 final GetIt getIt = GetIt.I;
@@ -25,7 +26,7 @@ Future init() async {
   getIt.registerSingleton<RequestHelpersImpl>(
       RequestHelpersImpl(getIt()));
   getIt.registerSingleton<EventServiceImpl>(
-      EventServiceImpl());
+      EventServiceImpl(snackBarServicesImpl: getIt(), navigationServiceImpl: getIt()));
   getIt.registerLazySingleton<ApiServiceImpl>(() => ApiServiceImpl(
       snackBarServicesImpl: getIt(),
       requestHelpers: getIt(),
@@ -34,4 +35,5 @@ Future init() async {
 
   getIt.registerFactory<InputCubit>(() => InputCubit(apiServiceImpl: getIt(), navigationServiceImpl: getIt(), snackBarServicesImpl: getIt(), prefs:getIt()));
   getIt.registerFactory<BottomNavCubit>(() => BottomNavCubit());
+  getIt.registerFactory<AddingEventsCubit>(() => AddingEventsCubit());
 }

@@ -36,7 +36,7 @@ class _DialogWidgetState extends State<DialogWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Select Phase to export to google calender',
+        Text('Select phase of current cycle to export phase dates to the google calender.',
             style: TextStyle(fontSize: 16, color: AppColors.blueGrey[300])),
         const SizedBox(
           height: 10,
@@ -117,40 +117,40 @@ class _DialogWidgetState extends State<DialogWidget> {
                   if (checkData[0].isSelected) {
                     Event event1 = Event(
                         summary: "Menstrual",
-                        colorId: "#F24951",
+                        colorId: "11",
                         end: EventDateTime(
                             dateTime: cycleInfo[currentCycle].menstrual.endDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName),
+                            timeZone: "GMT+01:00"),
                         start: EventDateTime(
                             dateTime: cycleInfo[currentCycle].menstrual.startDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName));
+                            timeZone: "GMT+01:00"));
                     Event event2 = Event(
                         summary: "Follicular",
-                        colorId: "#2ECECB",
+                        colorId: "7",
                         end: EventDateTime(
                             dateTime: cycleInfo[currentCycle].follicular.endDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName),
+                            timeZone: "GMT+01:00"),
                         start: EventDateTime(
                             dateTime: cycleInfo[currentCycle].follicular.startDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName));
+                            timeZone: "GMT+01:00"));
                     Event event3 = Event(
                         summary: "Ovulatory",
-                        colorId: "#00ff00",
+                        colorId: "2",
                         end: EventDateTime(
                             dateTime: cycleInfo[currentCycle].ovulatory.endDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName),
+                            timeZone: "GMT+01:00"),
                         start: EventDateTime(
                             dateTime: cycleInfo[currentCycle].ovulatory.startDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName));
+                            timeZone: "GMT+01:00"));
                     Event event4 = Event(
                         summary: "Luteal",
-                        colorId: "#FFB131",
+                        colorId: "6",
                         end: EventDateTime(
                             dateTime: cycleInfo[currentCycle].luteal.endDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName),
+                            timeZone: "GMT+01:00"),
                         start: EventDateTime(
                             dateTime: cycleInfo[currentCycle].luteal.startDay,
-                            timeZone: DateTime.now().toLocal().timeZoneName));
+                            timeZone: "GMT+01:00"));
                     events = [event1, event2, event3, event4];
                     debugPrint(events.toString());
                     getIt<EventServiceImpl>().sendAllDates(events: events);
@@ -160,47 +160,49 @@ class _DialogWidgetState extends State<DialogWidget> {
                       if(ne[i].isSelected && ne[i].title == "Menstrual"){
                         events.add(Event(
                             summary: "Menstrual",
-                            colorId: "#F24951",
+                            colorId: "11",
                             end: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].menstrual.endDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName),
+                                timeZone: "GMT+01:00"),
                             start: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].menstrual.startDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName)));
+                                timeZone: "GMT+01:00")));
                       }else if (ne[i].isSelected && ne[i].title == "Ovulatory"){
                         events.add(Event(
                             summary: "Ovulatory",
-                            colorId: "#00ff00",
+                            colorId: "2",
                             end: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].ovulatory.endDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName),
+                                timeZone: "GMT+01:00"),
                             start: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].ovulatory.startDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName)));
+                                timeZone: "GMT+01:00")));
                       }else if (ne[i].isSelected && ne[i].title == "Follicular"){
                         events.add(Event(
                             summary: "Follicular",
-                            colorId: "#2ECECB",
+                            colorId: "7",
                             end: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].follicular.endDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName),
+                                timeZone: "GMT+01:00"),
                             start: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].follicular.startDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName)));
+                                timeZone: "GMT+01:00")));
                       }else if (ne[i].isSelected && ne[i].title == "Luteal"){
                         events.add(Event(
                             summary: "Luteal",
-                            colorId: "#FFB131",
+                            colorId: "6",
                             end: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].luteal.endDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName),
+                                timeZone: "GMT+01:00"),
                             start: EventDateTime(
                                 dateTime: cycleInfo[currentCycle].luteal.startDay,
-                                timeZone: DateTime.now().toLocal().timeZoneName)));
+                                timeZone: "GMT+01:00")));
                       }
                     }
                     debugPrint(events.toString());
-                    getIt<EventServiceImpl>().sendAllDates(events: events);
+                    if(events.isNotEmpty){
+                      getIt<EventServiceImpl>().sendAllDates(events: events);
+                    }
                   }
                 },
                 child: const Text(

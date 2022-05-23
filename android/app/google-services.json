@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "625388522309",
+    "project_id": "hflo-challenge",
+    "storage_bucket": "hflo-challenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625388522309:android:a421bb6c519126b7ed0c2c",
+        "android_client_info": {
+          "package_name": "com.example.hormoniousflo_challenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625388522309-9cu9rk6qvlea0a5ie4atmq5uj0gutfi5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hormoniousflo_challenge",
+            "certificate_hash": "6b7985e06bbde38f0397eb7c0933dadba30ee912"
+          }
+        },
+        {
+          "client_id": "625388522309-143301lsmpm6oek9v5u3d0np1v95vjna.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8WC0oq_XwpnGm2x2MTNQXMdNShVoEYv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625388522309-143301lsmpm6oek9v5u3d0np1v95vjna.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

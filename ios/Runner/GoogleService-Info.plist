@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>625388522309-0hmvn43jv0kkfcsutgv5o9oio47n8hk9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.625388522309-0hmvn43jv0kkfcsutgv5o9oio47n8hk9</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>625388522309-9cu9rk6qvlea0a5ie4atmq5uj0gutfi5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAl20XWwVunraWgtvMJzTuhElhKwXUN_Xg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>625388522309</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.hormoniousfloChallenge</string>
+	<key>PROJECT_ID</key>
+	<string>hflo-challenge</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hflo-challenge.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:625388522309:ios:d5ed30c98a592269ed0c2c</string>
+</dict>
+</plist>
